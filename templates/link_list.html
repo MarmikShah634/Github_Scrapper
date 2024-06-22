@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Links</title>
+</head>
+<body>
+    <h1>Links</h1>
+    <p>Welcome, {{ request.user.username }}! <a href="{% url 'logout' %}">Logout</a></p>
+    <ul>
+        {% for link in links %}
+            <li>{{ link.url }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'submit_link' %}">Submit a new link</a>
+</body>
+</html>
